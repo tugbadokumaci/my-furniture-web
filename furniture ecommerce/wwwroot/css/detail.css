@@ -1,0 +1,15 @@
+﻿/*.product-container {
+    display: flex;
+    align-items: center;*/ /* Dikeyde ortala */
+    /*justify-content: center;*/ /* Yatayda ortala */
+    /*padding-top: 20px;*/ /* İstenilen padding-top değeri */
+    /*justify-content: space-around;
+}
+
+.image-container {
+    margin-right: 20px;*/ /* Resim ile metin arasındaki boşluğu ayarlayın */
+/*}
+
+.text-container {
+    flex: 1;*/ /* Metin alanını genişletmek için */
+/*}*/

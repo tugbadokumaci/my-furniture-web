@@ -38,15 +38,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Add DbContext to the services
 builder.Services.AddDbContext<Context>(options =>
 {
-    options.UseMySql("Server=154.56.47.12; Database=u574456636_furniture_web; User=u574456636_tugba_web; Password=T96531533d*;",
-           mySqlOptions =>
-           {
-               mySqlOptions.EnableRetryOnFailure(5, TimeSpan.FromSeconds(2), null);
-           });
+    options.UseMySql("Server=154.56.47.12; Database=u574456636_furniture_web; User=u574456636_tugba_web; Password=T96531533d*;");
 });
+
 
 var app = builder.Build();
 

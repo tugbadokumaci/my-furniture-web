@@ -6,9 +6,12 @@ namespace DataAccessLayer.Concrete
 {
     public class Context : DbContext
     {
+        public Context() { }
+
         public Context(DbContextOptions<Context> options)
             : base(options)
-        { }
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -16,7 +19,9 @@ namespace DataAccessLayer.Concrete
         }
 
         public DbSet<Category> Categories { get; set; }
-        // Add other DbSet properties as needed
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
 

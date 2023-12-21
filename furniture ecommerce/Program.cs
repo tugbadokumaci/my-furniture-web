@@ -48,7 +48,7 @@ builder.Services.AddControllersWithViews();
 // Configure the database context
 builder.Services.AddDbContext<Context>(options =>
 {
-    options.UseMySql("Server=154.56.47.12; Database=u574456636_furniture_web; User=u574456636_tugba_web; Password=T96531533d*;");
+    options.UseMySql("Server=154.56.47.12; Database=u574456636_furniture_web; User=u574456636_tugba_web; Password=T96531533d*;", ServerVersion.AutoDetect("Server=154.56.47.12; Database=u574456636_furniture_web; User=u574456636_tugba_web; Password=T96531533d*;"), null);
 });
 builder.Services.AddHttpClient();
 

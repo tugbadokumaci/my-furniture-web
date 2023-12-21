@@ -1,11 +1,22 @@
 ﻿using System;
+using EntityLayer.Concrete;
+using FurnitureWebAPI.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using System.Diagnostics;
 
 namespace UI.Controllers
 {
 	public class DefaultController : Controller
 	{
-		public ActionResult Home()
+        private readonly IHttpClientFactory _httpClientFactory;
+
+        public DefaultController(IHttpClientFactory httpClientFactory)
+        {
+            _httpClientFactory = httpClientFactory;
+        }
+
+        public ActionResult Home()
 		{
 			return View();
 		}
@@ -25,9 +36,26 @@ namespace UI.Controllers
         {
             return View();
         }
-        public ActionResult Detail()
+        public async Task<IActionResult> DetailAsync(int id)
         {
-            return View();
+            Product product = null;
+
+            using (var client = _httpClientFactory.CreateClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7119/"); // Your API base address
+
+                var response = await client.GetAsync($"/products/{id}"); // Your API endpoint
+                if (response.IsSuccessStatusCode)
+                {
+                    var products = await response.Content.ReadFromJsonAsync<Product>(); // Adjust Product type accordingly
+                    return View(products);
+                }
+                else
+                {
+                    // Handle error
+                    return View(product); // Adjust Product type accordingly
+                }
+            }
         }
 
     }

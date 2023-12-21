@@ -13,6 +13,8 @@ namespace FurnitureEcommerce.Models
         public int ProductID { get; set; }
         public String ProductName { get; set; }
         public String ProductDescription { get; set; }
+        public String ProductImage { get; set; }
+
         public bool ProductStatus { get; set; }
         public double ProductPrice { get; set; }
 

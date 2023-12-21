@@ -12,4 +12,7 @@
   <ItemGroup>
     <Folder Include="Concrete\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Net.Http.Formatting.Extension" Version="5.2.3" />
+  </ItemGroup>
 </Project>

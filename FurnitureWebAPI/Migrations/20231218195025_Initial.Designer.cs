@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FurnitureWebAPI.Migrations
 {
-    [DbContext(typeof(Context))]
+    [DbContext(typeof(MyDbContext))]
     [Migration("20231218195025_Initial")]
     partial class Initial
     {

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using EntityLayer.Concrete;
 
-namespace EntityLayer.Concrete
+namespace FurnitureEcommerce.Models
 {
-	public class Product
+    public class Product
 	{
 		public Product()
 		{

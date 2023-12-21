@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace EntityLayer.Concrete
+namespace FurnitureEcommerce.Models
 {
-	public class Category
+    public class Category
 	{
 		// property
 		// Erişim Belirleyici Türü - Değişken türü isim {get set}
